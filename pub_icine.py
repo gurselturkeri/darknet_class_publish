@@ -1,3 +1,6 @@
+from darknet_ros_msgs.msg import BoundingBoxes
+
+
 sola_donulmez_levha = None
 sola_mecburi_levha = None
 kirmizi_isik_levha = None
@@ -12,8 +15,6 @@ park_yasak_levha = None
 
 
 def YoloFunc(data):
-    
-    
 
     for box in data.bounding_boxes:
 
@@ -34,7 +35,6 @@ def YoloFunc(data):
             sola_donulmez_levha=True       
         else:   
             sola_donulmez_levha=False
-
 
         if(box.Class=="sola_mecburi" and box.probability>0.80):  
             sola_mecburi_levha=True
